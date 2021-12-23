@@ -3,14 +3,16 @@ import style from './Header.module.css';
 const Header = () => {
   return (
     <header className={style.header}>
-      <h1>Redux Auth</h1>
+      <a href="/">
+        <h2>React Redux</h2>
+      </a>
       <nav>
         <ul>
           <li>
-            <a href="/">My Products</a>
+            <a href="/">Products</a>
           </li>
           <li>
-            <a href="/">My Sales</a>
+            <a href="/">Sales</a>
           </li>
           <li>
             <button>Logout</button>

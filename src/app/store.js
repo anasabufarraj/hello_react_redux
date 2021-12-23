@@ -1,46 +1,50 @@
-import { createStore } from 'redux';
+import { createSlice, configureStore } from '@reduxjs/toolkit';
 
-const initialState = { counter: 0, hidden: false };
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: { counter: 0, hidden: false },
+  reducers: {
+    increment(state) {
+      state.counter++;
+    },
+    decrement(state) {
+      state.counter--;
+      if (state.counter < 0) {
+        state.counter = 0;
+      }
+    },
+    incrementBy(state, action) {
+      state.counter += action.payload;
+    },
+    decrementBy(state, action) {
+      state.counter -= action.payload;
+    },
+    toggle(state) {
+      state.hidden = !state.hidden;
+    },
+  },
+});
 
-function counterReducer(state = initialState, action) {
-  if (action.type === 'increment') {
-    return {
-      counter: state.counter + 1,
-      hidden: state.hidden,
-    };
-  }
+// const itemsSlice = createSlice({
+//   name: 'items',
+//   initialState: { quantity: 0 },
+//   reducers: {
+//     increment(state) {
+//       state.quantity++;
+//     },
+//     decrement(state) {
+//       state.counter--;
+//       if (state.quantity < 0) {
+//         state.quantity = 0;
+//       }
+//     },
+//   },
+// });
 
-  if (action.type === 'decrement') {
-    return {
-      counter: state.counter - 1,
-      hidden: state.hidden,
-    };
-  }
+const store = configureStore({
+  reducer: counterSlice.reducer,
+});
 
-  if (action.type === 'incrementBy') {
-    return {
-      counter: state.counter + action.value,
-      hidden: state.hidden,
-    };
-  }
+const counterActions = counterSlice.actions;
 
-  if (action.type === 'DecrementBy') {
-    return {
-      counter: state.counter - action.value,
-      hidden: state.hidden,
-    };
-  }
-
-  if (action.type === 'toggle') {
-    return {
-      counter: state.counter,
-      hidden: !state.hidden,
-    };
-  }
-
-  return state;
-}
-
-const store = createStore(counterReducer);
-
-export default store;
+export { store as default, counterActions };

@@ -1,5 +1,6 @@
-import style from './Counter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
+import { counterActions } from '../app/store';
+import style from './Counter.module.css';
 
 function Counter() {
   const dispatch = useDispatch();
@@ -7,28 +8,28 @@ function Counter() {
   const hidden = useSelector((state) => state.hidden);
 
   const handleIncrement = () => {
-    dispatch({ type: 'increment' });
+    dispatch(counterActions.increment());
   };
 
   const handleDecrement = () => {
-    dispatch({ type: 'decrement' });
+    dispatch(counterActions.decrement());
   };
 
   const handleIncrementBy = () => {
-    dispatch({ type: 'incrementBy', value: 5 });
+    dispatch(counterActions.incrementBy(5));
   };
 
   const handleDecrementBy = () => {
-    dispatch({ type: 'DecrementBy', value: 5 });
+    dispatch(counterActions.decrementBy(5));
   };
 
   const handleToggle = () => {
-    dispatch({ type: 'toggle' });
+    dispatch(counterActions.toggle());
   };
 
   return (
     <main className={style.counter}>
-      <h1>Redux Counter</h1>
+      <h1>Counter</h1>
       {hidden || (
         <div>
           <button onClick={handleIncrement}>+</button>

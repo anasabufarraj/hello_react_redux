@@ -1,5 +1,5 @@
 .header {
-  width: 100%;
+  width: 85%;
   height: 5rem;
   display: flex;
   justify-content: space-between;
@@ -24,25 +24,24 @@
 .header a {
   text-decoration: none;
   color: white;
-  font-size: 1.25rem;
 }
 
 .header a:hover,
 .header a:active {
-  color: #b864da;
+  color: #1e3f59;
 }
 
 .header button {
-  font-size: 1.25rem;
-  background-color: #ffbb00;
-  border: 1px solid #ffbb00;
+  color: #838383;
+  background-color: #fafafa;
+  border: 1px solid #53aaf5;
+  border-radius: 5px;
   padding: 0.5rem 1.5rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  color: #2c2922;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .header button:hover,
 .header button:active {
-  background-color: #ffa600;
-  border-color: #ffa600;
+  color: #2b2b2b;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
