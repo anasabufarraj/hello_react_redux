@@ -1,6 +1,6 @@
 import style from './Header.module.css';
 
-const Header = () => {
+function Header() {
   return (
     <header className={style.header}>
       <a href="/">
@@ -21,6 +21,6 @@ const Header = () => {
       </nav>
     </header>
   );
-};
+}
 
 export default Header;

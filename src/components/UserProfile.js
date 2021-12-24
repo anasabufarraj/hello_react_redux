@@ -1,11 +1,11 @@
 import style from './UserProfile.module.css';
 
-const UserProfile = () => {
+function UserProfile() {
   return (
     <main className={style.profile}>
-      <h2>My User Profile</h2>
+      <h3>Profile</h3>
     </main>
   );
-};
+}
 
 export default UserProfile;

@@ -1,6 +1,6 @@
 import style from './Auth.module.css';
 
-const Auth = () => {
+function Auth() {
   return (
     <main className={style.auth}>
       <section>
@@ -18,6 +18,6 @@ const Auth = () => {
       </section>
     </main>
   );
-};
+}
 
 export default Auth;

@@ -15,12 +15,23 @@
 }
 
 .value {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #53aaf5;
-  margin: 1rem 0;
+  margin: 1rem;
   font-weight: bold;
 }
 
-.toggle {
-  margin: 1rem;
+button {
+  color: #838383;
+  background-color: #fafafa;
+  border: 1px solid #838383;
+  border-radius: 5px;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+button:hover,
+button:active {
+  color: #2b2b2b;
 }

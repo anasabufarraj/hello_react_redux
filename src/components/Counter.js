@@ -4,15 +4,15 @@ import style from './Counter.module.css';
 
 function Counter() {
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter);
-  const hidden = useSelector((state) => state.hidden);
+  const counter = useSelector((state) => state['counter'].value);
+  const hidden = useSelector((state) => state['counter'].hidden);
 
   const handleIncrement = () => {
-    dispatch(counterActions.increment());
+    dispatch(counterActions.increment(null));
   };
 
   const handleDecrement = () => {
-    dispatch(counterActions.decrement());
+    dispatch(counterActions.decrement(null));
   };
 
   const handleIncrementBy = () => {
@@ -24,12 +24,12 @@ function Counter() {
   };
 
   const handleToggle = () => {
-    dispatch(counterActions.toggle());
+    dispatch(counterActions.toggle(null));
   };
 
   return (
     <main className={style.counter}>
-      <h1>Counter</h1>
+      <h3>Counter</h3>
       {hidden || (
         <div>
           <button onClick={handleIncrement}>+</button>
@@ -38,9 +38,7 @@ function Counter() {
         </div>
       )}
       <button onClick={handleDecrementBy}>-5</button>
-      <button className={style.toggle} onClick={handleToggle}>
-        Toggle Counter
-      </button>
+      <button onClick={handleToggle}>{hidden ? 'Show' : 'Hide'}</button>
       <button onClick={handleIncrementBy}>+5</button>
     </main>
   );
