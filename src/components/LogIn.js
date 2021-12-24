@@ -1,10 +1,21 @@
-import style from './Auth.module.css';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../app/store';
+import style from './LogIn.module.css';
 
-function Auth() {
+function LogIn() {
+  const dispatch = useDispatch();
+
+  const handleLogin = (event) => {
+    // Use preventDefault() to prevent <button> submit
+    // Otherwise, use <input type="button" /> button
+    event.preventDefault();
+    dispatch(authActions.logIn(null));
+  };
+
   return (
     <main className={style.auth}>
       <section>
-        <form>
+        <form onSubmit={handleLogin}>
           <div className={style.control}>
             <label htmlFor="email">Email</label>
             <input type="email" id="email" />
@@ -20,4 +31,4 @@ function Auth() {
   );
 }
 
-export default Auth;
+export default LogIn;

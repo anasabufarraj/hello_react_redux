@@ -1,20 +1,21 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Counter from './components/Counter';
 import Header from './components/Header';
-import Auth from './components/Auth';
+import LogIn from './components/LogIn';
 import UserProfile from './components/UserProfile';
 
-class App extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Header />
-        <Auth />
-        <UserProfile />
-        <Counter />
-      </React.Fragment>
-    );
-  }
+function App() {
+  const isAuth = useSelector((state) => state['auth'].isAuth);
+
+  return (
+    <React.Fragment>
+      <Header />
+      {!isAuth && <LogIn />}
+      {isAuth && <UserProfile />}
+      {/*<Counter />*/}
+    </React.Fragment>
+  );
 }
 
 export default App;
