@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { authActions } from '../app/store';
+import { authActions } from '../app/authSlice';
 import style from './Header.module.css';
 
 function Header() {

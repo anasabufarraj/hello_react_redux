@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { counterActions } from '../app/store';
+import { counterActions } from '../app/counterSlice';
 import style from './Counter.module.css';
 
 function Counter() {

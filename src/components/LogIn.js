@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { authActions } from '../app/store';
+import { authActions } from '../app/authSlice';
 import style from './LogIn.module.css';
 
 function LogIn() {

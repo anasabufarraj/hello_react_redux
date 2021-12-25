@@ -13,7 +13,7 @@ function App() {
       <Header />
       {!isAuth && <LogIn />}
       {isAuth && <UserProfile />}
-      {/*<Counter />*/}
+      <Counter />
     </React.Fragment>
   );
 }
